@@ -25,6 +25,22 @@ a {
     text-transform: uppercase;
 }
 
+.menu-btn {
+    width: 3rem;
+    height: 3rem;
+    display: flex;/* since there is no content this will not be visble the dispaly is set to block by deafault in browser */
+    flex-direction: column;
+    justify-content: space-around; /* will distr. evenly the lines */
+}
+
+.menu-btn span {
+
+    width: 50px;
+    height: 3px;
+    background-color: white;
+
+}
+
 #main-header ul {
     list-style: none;
     display: flex;
@@ -33,12 +49,14 @@ a {
 }
 
 #main-header li {
-    margin: 0 1rem; /* this rem is assuming the font-size fo the navigator by defaul is 16px so */
+    margin: 0 1rem;
+    /* this rem is assuming the font-size fo the navigator by defaul is 16px so */
 }
 
 #main-header nav a {
     color: rgb(185, 131, 31);
-    font-size: 1.2rem; /* assuming the navigator size is 16 it will multpile 1.2 which equal 20aprox " preivous value" */
+    font-size: 1.2rem;
+    /* assuming the navigator size is 16 it will multpile 1.2 which equal 20aprox " preivous value" */
 }
 
 #main-header nav a:hover {
@@ -48,7 +66,7 @@ a {
 main h1 {
     text-align: center;
     color: rgb(238, 164, 80);
-    font-size: 38px;
+    font-size: 3rem;
 }
 
 #latest-products {
@@ -70,7 +88,8 @@ main h1 {
 
 .food-items {
     background-color: rgb(229, 206, 182);
-    border-radius: 6px; /* border radius is recommend express in pixels to make sure not weird behaviour */
+    border-radius: 6px;
+    /* border radius is recommend express in pixels to make sure not weird behaviour */
     overflow: hidden;
 
 
@@ -78,14 +97,15 @@ main h1 {
 
 .food-items img {
     height: 15rem;
-    width: 100%; /* percetanges are good practices for reponsive */
+    width: 100%;
+    /* percetanges are good practices for reponsive */
     object-fit: cover;
 }
 
 .food-item-content {
     padding: 1rem;
     text-align: center;
-    font-size: 200%;
+    font-size: 100%;
 
 }
 
@@ -101,4 +121,32 @@ main h1 {
 .btn:hover {
 
     background-color: rgb(221, 134, 34);
+}
+
+/* min-width is used from desk top mobile and max from mobile to desk */
+@media (max-width:48rem) {
+
+    /* keeping media queries in order of the element defined in html for best practices*/
+    #main-header nav {
+        /*         opacity:0%; that was a nice try
+ */
+        display: none;
+    }
+
+    main h1 {
+        font-size: 1.5rem;
+    }
+
+
+    #latest-products ul {
+        grid-template-columns: 1fr;
+
+    }
+   
+}
+
+@media (min-width:48rem) {
+.menu-btn {
+    display: none;
+}
 }
